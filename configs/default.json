@@ -1,0 +1,41 @@
+{
+  "data_root": "C:/WonderOfU_Data",
+  "output_root": "experiments",
+  "seed": 42,
+  "model": {
+    "image_size": 160,
+    "frames_per_video": 32,
+    "embedding_dim": 128,
+    "shared_dim": 128,
+    "use_rppg": true
+  },
+  "preprocessing": {
+    "image_size": 160,
+    "frames_per_video": 32,
+    "normalization_mean": [0.485, 0.456, 0.406],
+    "normalization_std": [0.229, 0.224, 0.225],
+    "face_detector": "opencv_haar",
+    "face_min_size": 40,
+    "face_crop_padding": 0.2,
+    "allow_center_crop_fallback": false
+  },
+  "training": {
+    "batch_size": 4,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.00001,
+    "optimizer": "adamw",
+    "device": "auto",
+    "epochs": 10,
+    "patience": 3,
+    "num_workers": 0,
+    "mixed_precision": true,
+    "experiment_name": "wonderofu_multitask"
+  },
+  "datasets": {
+    "siw": {"path": "SiW", "manifest": "", "task": "spoof"},
+    "faceforensics": {"path": "FaceForensicsPP", "manifest": "", "task": "forgery"},
+    "idnet": {"path": "IDNet", "manifest": "", "task": "document"},
+    "document_recapture": {"path": "DocumentRecapture", "manifest": "", "task": "document"},
+    "dfdc": {"path": "DFDC", "manifest": "", "task": "forgery"}
+  }
+}

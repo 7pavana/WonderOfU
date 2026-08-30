@@ -1,0 +1,49 @@
+# Data, sensitive uploads, and generated artifacts
+/data/
+/datasets/
+/uploads/
+/tmp_uploads/
+/checkpoints/*
+!/checkpoints/.gitkeep
+/results/*
+!/results/.gitkeep
+/experiments/*
+!/experiments/.gitkeep
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Interrupted downloads and local key material
+*.tmp
+*.part
+*.crdownload
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+
+# Node and secrets
+node_modules/
+.env
+.env.*
+!.env.example
+npm-debug.log*
